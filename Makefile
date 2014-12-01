@@ -30,7 +30,7 @@ package: check-version
 	curl --fail -K ~/.curlrc_github -L -o v$(VERSION).tar.gz https://api.github.com/repos/qcode-software/$(NAME)/tarball/v$(VERSION)
 	tar --strip-components=1 -xzvf v$(VERSION).tar.gz -C $(TMP_DIR)
 
-	fakeroot checkinstall -D --deldoc --backup=no --install=no --pkgname=$(NAME) --pkgversion=$(VERSION) --pkgrelease=$(RELEASE) --pkglicense="PRIVATE" -A all -y --maintainer $(MAINTAINER) --reset-uids=yes --requires "tcl8.5" --replaces none --conflicts none make install
+	fakeroot checkinstall -D --deldoc --backup=no --install=no --pkgname=$(NAME) --pkgversion=$(VERSION) --pkgrelease=$(RELEASE) --pkglicense="PUBLIC" -A all -y --maintainer $(MAINTAINER) --reset-uids=yes --requires "tcl8.5" --replaces none --conflicts none make install
 
 install: build
 	make -C $(BUILD_DIR) install
