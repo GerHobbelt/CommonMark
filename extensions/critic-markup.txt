@@ -1,0 +1,18 @@
+Critic Markup
+=============
+
+- <http://criticmarkup.com/>
+- `{-- removed content --}`
+- `{~~removed content~>inserted content~~}`
+- `{++ inserted content ++}`
+- `{== highlighted ==}`
+
+- `--removed content--`
+- `~~removed content~>inserted content~~`
+- `++inserted content++`
+- `==highlighted==`
+- `>>comment<<`
+
+**Issue:** Make proper superset of [marked text](marked) and [strikethrough](strikethrough).
+
+**Issue:** Ensure Smartypants compatibility for `--` being interpreted as an en or em dash.
