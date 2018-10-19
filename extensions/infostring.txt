@@ -11,7 +11,7 @@ Introduction
 
 
 
-Code Blocks
+Fenced Blocks
 -----------
 
 ```example
@@ -35,6 +35,43 @@ bar
 bar
 </code></pre>
 ~~~
+
+### Source Code
+~~~~
+```` language
+````
+~~~~
+
+### Interpreted Code
+````
+~~~~ language
+~~~~
+````
+
+### Diagrams
+````
+~~~~ language
+~~~~
+````
+
+### Math Equations
+````
+~~~~ language
+~~~~
+````
+
+### Poems
+````
+~~~~ language
+~~~~
+````
+
+### Art
+````
+~~~~ language
+~~~~
+````
+
 
 Headings
 --------
@@ -76,13 +113,15 @@ Besides _link text_, all types of links feature a mandatory _link destination_ (
 
 ### Inline Links
 
-`[text](infos-tring)`
+- `[link text](link-destination link-info-string)`
+- `[text](info-string)`
 
 ### Reference Links
 
-`[text][explicit label]`
+- `[text][explicit label]`
 
-`[label]: info-string`
+- `[label]: info-string`
+- `[link label]: link-destination link-info-string`
 
 ### Non-destination Links
 
@@ -102,10 +141,13 @@ Besides _link text_, all types of links feature a mandatory _link destination_ (
 
 `[text](. rest of info string)`
 
+### Images
+
+- `![image text](image-source image-info-string)`
+
 Lists
 -----
 
 ### Whole List
 
 ### List Items
-
