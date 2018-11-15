@@ -9,6 +9,8 @@ See also
 Introduction
 ------------
 
+Critic Markup is an orthogonal specification to markdown, which means it can be used with other languages as well.
+
 Standard Syntax
 ---------------
 
@@ -45,8 +47,7 @@ Truncated Syntax
 </ul>
 ````````````````````````````````````````````````
 
+**Issue:** Make proper superset of [marked text](marked-text) and [strikethrough](strikethrough).
 
-**Issue:** Make proper superset of [marked text](marked) and [strikethrough](strikethrough).
-
-**Issue:** Ensure Smartypants compatibility for `--` being interpreted as an en or em dash.
+**Issue:** Ensure [Smartypants](smartypants) compatibility for `--` being interpreted as an en or em dash.
 

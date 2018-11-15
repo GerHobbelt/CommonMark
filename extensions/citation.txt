@@ -1,5 +1,21 @@
 Citation
 ========
 
-- `""quotation""`
-- `"""citation"""`
+See also
+--------
+
++ [Text Spans extension](span) – `["foo"]` for `<q>foo</q>` and `[foo](:)` for `<cite>foo</cite>`
+
+Introduction
+------------
+
+
+
+
+```````````````````````````````````````` example
+""quotation""
+"""citation"""
+.
+<q>quotation</q>
+<cite>citation</cite>
+````````````````````````````````````````

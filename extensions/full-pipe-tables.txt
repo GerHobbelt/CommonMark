@@ -1,10 +1,18 @@
 Full-Featured Pipe Tables
 =========================
 
+See also
+--------
+
 Requires full support of
 
-- [basic pipe tables](basic-pipe-tables)
-- [extended pipe tables](extended-pipe-tables)
+- [Extended Pipe Tables extension](extended-pipe-tables)
+- [Basic Pipe Tables extension](basic-pipe-tables)
+
+Introduction
+------------
+
+
 
 Multiple Rows in Table Head
 ---------------------------

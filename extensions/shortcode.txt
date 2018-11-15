@@ -28,20 +28,14 @@ Implementations may substitute the code either by a single character, a sequence
 
 :+1: :100::cat: ​ :smile_cat:
 
-Character macros are handled like any inline text. 
-
-```````````````````````````````````` example
-_:cat:_
-.
-<em></em>
-````````````````````````````````````
-
-They cannot contain other markup themselves, but may appear inside other inline markup.
+Character macros cannot contain other markup themselves, but may appear inside other inline markup.
 
 `````````````````````````````````````````` example
 :_cat_: :*dog*:
+_:cat:_ *:dog:*
 .
 :_cat_: :<em>dog</em>:
+<em>:cat:</em> <em>:dog:</em>
 ``````````````````````````````````````````
 
 Defining new macros

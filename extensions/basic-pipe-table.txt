@@ -4,25 +4,29 @@ Basic Pipe Tables
 See also
 --------
 
-- 
+- [Extended Pipe Tables extension](extended-pipe-table)
+- [Full Pipe Tables extension](full-pipe-table)
 
 Introduction
 ------------
 
-Tables consists of lines that are turned into rows. 
-The first, mandatory line contains the column headers and is turned into the tabular head. 
-The second, mandatory line is special: It specifies the number of columns and optionally the horizontal alignment of their contents, but is not turned into content.
-The third, optional line and any other following it contains body content. 
+Tables consists of lines that are turned into _tabular rows_. 
+The first, mandatory line contains the _column headers_ and is turned into the _tabular head_. 
+The second, mandatory line is special: It specifies the number of columns and optionally the horizontal alignment of their contents, but is not turned into content itself.
+The third, optional line (and any succeeding line) contains _tabular body_ content. 
+There is no markup for a _tabular foot_ or _table caption_.
 
-Cells are delineated by the vertical line or pipe character `|`, optionally surrounded by whitespace characters. 
+_Tabular cells_ are delineated by the vertical line or pipe character `|`, optionally surrounded by whitespace characters. 
 This kind of tables is also known as _pipe tables_. 
 Lines _may_ and in some cases _must_ have a vertical line at their start or end or both. 
-Pipe tables that omit all outside left and right borders are sometimes called _simple tables_. 
+Pipe tables that omit all outmost left and right borders are sometimes called _simple tables_. 
 Lines may be indented (how exactly?) and can have any number of trailing whitespace characters. 
 Two trailing spaces improve the fallback rendering where this extension is not supported. 
 
-Minimal tables
+Minimal table tests
 --------------
+
+**TO DO:** *either move to separate test-case document or add explanatory prose*
 
 ```````````````````````````````` example
 A
@@ -206,10 +210,10 @@ not B | D |
 </table>
 ````````````````````````````````
 
-Note that GFM outputs *every* line break input inside a paragraph as a forced line break, thereby violating good Markdown and Commonmark principles.
+Note that GitHub outputs *every* line break input inside a paragraph as a forced line break, thereby violating good Markdown and Commonmark principles.
 
-It is recommended for table generators to add row-initial and row-final pipes, 
-and to add two spaces after each row-final pipe to improve rendering in legacy implementations.
+It is *recommended* for table generators to add row-initial and row-final pipes, 
+and to add two spaces after each row-final pipe to improve rendering in legacy implementations:
 
 ```````````````````````````````` example
 | A | C |  
@@ -222,7 +226,7 @@ and to add two spaces after each row-final pipe to improve rendering in legacy i
 </p>
 ````````````````````````````````
 
-Alternative implementations may allow tables to be fenced for the same reason, but GFM does not:
+Alternative implementations may allow tables to be fenced for the same reason, but GitHub does not:
 
 ~~~~~~~~~~~ markdown
 ​~~~~~~~~
@@ -231,9 +235,9 @@ Alternative implementations may allow tables to be fenced for the same reason, b
 | B | D |
 ​~~~~~~~~
 .
-<pre>| A | C |
+<pre><code>| A | C |
 |---|---|
-| B | D |</pre>
+| B | D |</code></pre>
 ~~~~~~~~~~~
 
 ~~~~~~~~~~~ markdown
@@ -243,13 +247,13 @@ Alternative implementations may allow tables to be fenced for the same reason, b
 | B | D |
 `````````
 .
-<pre>| A | C |
+<pre><code>| A | C |
 |---|---|
-| B | D |</pre>
+| B | D |</code></pre>
 ~~~~~~~~~~~
 
 White space around pipes is optional and meaningless. 
-(In other extensions, horizontal alignment is determined by the existence of spaces between the pipe and the start and the end of the cell contents.) 
+(In other, similar extensions, horizontal cell alignment is determined by the existence of spaces between the pipe and the start and the end of the cell contents.) 
 Automatic table generators may add additional whitespace to neatly align contents within the same column, unless the text becomes too long, which can easily happen with inline links for instance.
 
 ```````````````````````````````` example
@@ -346,7 +350,7 @@ Nor are plus signs `+` which, like the asterisk `*`, are alternatives as bullet 
 | B | D |</p>
 ````````````````````````````````
 
-Plus signs are also no valid alternative for internal pipes:
+Plus signs are also no valid alternative for internal pipes, even when this looks prettier:
 
 ```````````````````````````````` example
 | A | C |
@@ -523,7 +527,7 @@ foo</p>
 ````````````````````````````````
 
 That means, there must be a blank line before and after each table.
-Two tables also need to be separated and there is no syntax for a *table footer* (i.e. `tfoot` in HTML):
+Two tables also need to be separated and there is no syntax for a _tabular foot_ or _table footer_ (i.e. `tfoot` in HTML):
 
 ```````````````````````````````` example
 | A |
@@ -723,7 +727,7 @@ Unless improperly indented:
 </ol>
 ````````````````````````````````
 
-Nor headings. 
+Tables cannot be nested inside headings. 
 
 ATX headings cannot span multiple lines except with explicit internal line breaks.
 
@@ -731,10 +735,17 @@ ATX headings cannot span multiple lines except with explicit internal line break
 ### | A |
 |---|
 | B |
+
+### | C |\
+|---|\
+| D |
 .
 <h3>| A |</h3>
 <p>|---|
 | B |</p>
+<h3>| C |<br/>
+|---|<br/>
+| D |</h3>
 ````````````````````````````````
 
 Setext headings can span multiple lines but not contain other blocks.
@@ -748,6 +759,16 @@ Setext headings can span multiple lines but not contain other blocks.
 <h1>| A |
 |---|
 | B |</h1>
+.
+<table>
+<thead>
+<tr><th>A</th></tr>
+</thead>
+<tbody>
+<tr><td>B</td></tr>
+<tr><td>====</td></tr>
+</tbody>
+</table>
 ````````````````````````````````
 
 No tables
@@ -845,10 +866,14 @@ Horizontal Alignment
 </table>
 ````````````````````````````````
 
-Cells spanning multiple rows or columns
----------------------------------------
+Further Extensions
+------------------
+
+### Cells spanning multiple rows or columns
 
 This syntax extension does not support an equivalent of the `rowspan` and `colspan` cell attributes in HTML. 
+
+**TO DO:** *move the following examples to the relevant extension(s)*
 
 Other extensions use adjacent pipes for row spans, i.e. cells without even whitespace inside are merged with the one to their left (or right).
 
@@ -900,10 +925,11 @@ Other extensions use adjacent pipes for row spans, i.e. cells without even white
 </table>
 ````````````````````````````````
 
-Row Headers
------------
+### Row Headers
 
 This syntax extension does not support an equivalent of the `th` element in HTML outside the column headers in `thead`. 
+
+**TO DO:** *move the following examples to the relevant extension(s)*
 
 Other extensions may use alternative separators or additional markup, e.g. `#` as in headings.
 
@@ -1027,12 +1053,13 @@ Other extensions may use alternative separators or additional markup, e.g. `#` a
 </table>
 ````````````````````````````````
 
-Table Captions
---------------
+### Table Captions
 
 This syntax extension does not support an equivalent of the `caption` element in HTML.
 
-Other extensions may use either a directly/closely preceding or succeeding standard heading (ATX or Setext style) or a 7th-level heading `#######` as a table caption.
+**TO DO:** *move the following examples to the relevant extension(s)*
+
+Other extensions *may* use either a directly/closely preceding or succeeding standard heading (ATX or Setext style) or a 7th-level heading `#######` as a table caption.
 
 ```````````````````````````````` example
 ###### Caption
@@ -1200,7 +1227,7 @@ Yet other extension may use other conventions which may be shared with other flo
 Markup inside
 -------------
 
-Tables can contain any kind of inline markup.
+Tables can contain any kind of inline markup, but no line breaks inside.
 
 ```````````````````````````````` example
 | emphasis |
