@@ -4,6 +4,8 @@ Definition Lists
 See also
 --------
 
+- Discussion: 
+
 Introduction
 ------------
 
@@ -32,7 +34,7 @@ Long and complex style
 
 Multiple terms sharing a single definition and single terms with multiple definitions are supported in the intuitive way.
 
-```example
+```````````````````````````````````````````````` example
 - First Term:
 - Second Term:
 : Common Definition
@@ -49,5 +51,26 @@ Multiple terms sharing a single definition and single terms with multiple defini
 <dt>Term</dt><dd>First Definition</dd><dd>Second Definition</dd>
 </div>
 </dl>
-```
+````````````````````````````````````````````````
 
+Legacy style
+------------
+
+While the list marker and trailing colon improve fallback in implementations without support for definition lists, most existing implementations do not expect them and fail badly. Most expect a blank line between a definition and the next term, and some also between multiple terms or definitions.
+
+Kramdown, Multimarkdown, Pandoc, PHP MArkdown Extra, RDiscount
+
+```````````````````````````````````````````````` example
+First Term
+Second Term
+: Common Definition
+
+Term
+: First Definition
+: Second Definition
+.
+<dl>
+<dt>First Term</dt><dt>Second Term</dt><dd>Common Definition</dd>
+<dt>Term</dt><dd>First Definition</dd><dd>Second Definition</dd>
+</dl>
+````````````````````````````````````````````````

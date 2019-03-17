@@ -4,7 +4,7 @@ Diagrams
 See also
 --------
 
-+ 
++ [Infostring extension](infostring)
 
 Introduction
 ------------
@@ -21,7 +21,8 @@ Other
 -----
 
 ```````````````````````````````````````````````` example
-Markdown
+~~~ dot
+~~~
 .
 HTML
 ````````````````````````````````````````````````

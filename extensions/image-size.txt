@@ -7,6 +7,7 @@ See also
 + [Attributes extension](attributes)
 + [Info Strings extension](infostring)
 + [Floating Figures extension](figure)
++ RDiscount, Showdown
 
 Introduction
 ------------

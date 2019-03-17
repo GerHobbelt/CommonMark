@@ -17,9 +17,9 @@ Introduction
 
 This extension specifies a simple symbolic syntax for local link targets. It overloads reference link `[text][label]` and inline link `[text](destination)` syntax with predefined _labels_ and _destinations_, respectively.
 
-The difference between `[section][...]` and `[section](#...)` is that the latter shall always output the literal text only, whereas the former may be amended or substituted automatically with target type names, section or page numbers.
+The difference between `[section][…]` and `[section](#…)` is that the latter shall always output the literal text only, whereas the former may be amended or substituted automatically with target type names, section or page numbers.
 
-Where the following examples have `section` as a `rel` value, it could equally be a `chapter` or `subsection`. In any case, `href="#..."` stands in for the actual target that cannot be determined from the example source alone.
+Where the following examples have `section` as a `rel` value, it could equally be a `chapter` or `subsection`. In any case, `href="#…"` stands in for the actual target that cannot be determined from the example source alone.
 
 ~~~~ markdown
 Chapter

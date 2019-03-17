@@ -99,3 +99,27 @@ nope
 </ol>
 </section>
 ````````````````````````````````````````````````
+
+GFM also does not support the circumflex outside the square brackets.
+
+```example
+This doesn't have a referent^[nope],
+while this one does^[yep].
+
+[yep]: foo
+.
+<p>This doesn't have a referent^[nope],
+while this one does^<a href="foo">yep</a>.</p>
+.
+<p>This doesn't have a referent<sup class="footnote-ref"><a href="#fn1" id="fnref1">[1]</a></sup>,
+while this one does ?????.</p>
+<section class="footnotes">
+<ol>
+<li id="fn1">
+nope
+<a href="#fnref1" class="footnote-backref">↩</a>
+</li>
+</ol>
+</section>
+```
+

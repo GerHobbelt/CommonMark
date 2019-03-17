@@ -9,7 +9,7 @@ See also
 Introduction
 ------------
 
-On [GitLab](https://gitlab.com/gitlab-org/gitlab-ce/blob/master/doc/user/markdown.md#colors) it is possible to have color written in Hex, RGB or HSL format rendered with a color indicator. It is implemented as a kind of implicit syntax highlighting of inline code spans marked by backticks `` ` ``. The colors need to be written in a format supported by [CSS Colors Level 3], which includes triplets of hexadecimal 8-bit RGB values preceded by a hash sign which is also widespread outside CSS. The respective code span will be followed by a color _chip_ or _swatch_.
+On [GitLab](https://gitlab.com/gitlab-org/gitlab-ce/blob/master/doc/user/markdown.md#colors) it is possible to have color written in Hex, RGB or HSL format rendered with a color indicator. It is implemented as a kind of implicit syntax highlighting of inline code spans marked by backticks `` ` ``. The colors need to be written in a format supported by [CSS Color Level 3], which includes triplets of hexadecimal 8-bit RGB values preceded by a hash sign that are also widespread outside CSS. The respective code span will be followed by a color _chip_ or _swatch_.
 
 ```````````````````````````````````````````````` example
 `#F00`  
@@ -39,7 +39,7 @@ On [GitLab](https://gitlab.com/gitlab-org/gitlab-ce/blob/master/doc/user/markdow
 * RGB: `` `RGB[A](R, G, B[, A])` ``
 * HSL: `` `HSL[A](H, S, L[, A])` ``
 
-Named colors are not supported.
+Named colors are not supported, nor are color spaces introduced in CSS Color Level 4 or later.
 
 Test Cases
 ----------

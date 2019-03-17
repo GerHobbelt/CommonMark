@@ -27,8 +27,8 @@ There are four types of attributes. The default attribute consists only of a str
 Title and Caption
 -----------------
 
-Since it is inherited from link syntax, there are three ways to specify the _title_. 
-If applicable, the parentheses variant is used for figure captions and the like, while the quoted strings are preferably used for tooltips.
+Since it is inherited from link syntax, there are three ways to specify the _title_, using two types of quotation marks or round parentheses. 
+If applicable, the parentheses variant is used for figure captions and the like, while the quoted strings are preferably used for tooltips or similar assistive methods.
 
 ```````````````````````````````````````````````` example
 { "title'" }
@@ -43,12 +43,12 @@ If applicable, the parentheses variant is used for figure captions and the like,
 Identifier and Class
 --------------------
 
-URL fragment identifiers and CSS Selectors use a hash sign `#` to prefix document-wide unique IDs. The latter also uses a period `.` to prefix categorizing classes.
+URL fragment identifiers and CSS Selectors use a hash sign `#` to prefix document-wide **unique identifiers** (IDs). The latter also uses a period `.` to prefix categorizing **classes**.
 
 ```````````````````````````````````````````````` example
-{ #id .class }
+{ #identifier .class }
 .
-<p id="id" class="class">
+<p id="identifier" class="class">
 ````````````````````````````````````````````````
 
 Like CSS Selectors, these can be chained without intervening spaces.
@@ -77,7 +77,7 @@ Multiple ID attributes are usually disallowed by the output format and the first
 Destination
 -----------
 
-In standard link syntax, the _link destination_ (i.e. URL) *may* optionally be enclosed in angular brackets, but must always come first. In other contexts, every URL *should* be enclosed as well, but it may appear anywhere. Every local or relative URL *must* be enclosed.
+In standard link syntax, the _link destination_ (i.e. URL) *may* optionally be enclosed in angular brackets, but must always come first. In other contexts, every URL *should* be enclosed as well, but it may appear anywhere. Every local URL and every relative URL *must* be enclosed.
 
 ```````````````````````````````````````````````` example
 { <destination> }
@@ -92,7 +92,12 @@ In standard link syntax, the _link destination_ (i.e. URL) *may* optionally be e
 Key-Value Pairs
 ---------------
 
-Values can be enclosed like titles in quotation marks or parentheses.
+Many output formats support attributes or properties that are basically pairs of a key and one ore more values. They put certain restrictions on some of them depending on the type and openness of the value space. They may allow some kind of shorthand notation as well.
+
+Values can be enclosed, just like titles, in quotation marks or parentheses, but these boundaries are optional in most cases.
+
+User-defined custom keys are prefixed by an at sign `@`.
+
 TODO: space-separated vs. comma-separated
 
 ```````````````````````````````````````````````` example
@@ -130,13 +135,28 @@ key="value with spaces"
 Styling
 -------
 
-Since HTML is such a popular output format and it is almost always used with CSS for styling, there is a special syntax to include CSS rules.
+Since HTML is such a popular output format and it is almost always used with CSS for styling, there is a special syntax to include inline CSS rules.
 
-```example
+```````````````````````````````````````````````` example
 { {property: value} }
 .
 <p style="property: value">
-```
+````````````````````````````````````````````````
+
+Action Triggers
+--------------
+
+TODO
+
+```````````````````````````````````````````````` example
+{ focus:"function" }
+{ focus:'function' }
+{ focus:(function) }
+{ focus:{function} }
+{ focus={function} }
+.
+<p onfocus="function();">
+````````````````````````````````````````````````
 
 Boolean Toggles
 ---------------
@@ -207,12 +227,13 @@ Where code blocks etc. should not be rendered as source code but should be inter
 { !parser }
 .
 <p script="parser">
+<script type="parser">
 ````````````````````````````````````````````````
 
 Content Language
 ----------------
 
-Many output languages, including HTML, support the tagging of text content with codes for natural languages according to BCP47. This can improve (automatic) translations and speech synthesis in particular.
+Many output languages, including HTML, support the tagging of text content with codes for natural languages according to [BCP47]. This can improve (automatic) translation and speech synthesis in particular.
 
 *Not final yet!*
 
@@ -251,17 +272,15 @@ foo
 Syntax Highlighting
 -------------------
 
-While `.class` is intended for literal class names, many Javascript syntax highlighting plugins expect a certain kind of class value, usually prepended by a certain namespace-like prefix. In applicable environments, i.e. mostly the info string of fenced code blocks, the first _word_ (which must not have a punctuation prefix) is used for this case.
-
-Some existing implementations 
+While `.class` is intended for literal class names, many (Javascript) code syntax highlighting libraries expect a certain kind of class value, usually prepended by a namespace-like prefix. In applicable environments, i.e. mostly the info string of fenced code blocks, the first _word_ (which must not have a punctuation prefix) is used for this case. Further details are left to implementations.
 
 ```````````````````````````````````````````````` example
-~~~ foo
-bar
+~~~ foo .bar
+baz
 ~~~
 .
-<pre><code class="language-foo">
-bar
+<pre><code class="language-foo bar">
+baz
 </code></pre>
 ````````````````````````````````````````````````
 

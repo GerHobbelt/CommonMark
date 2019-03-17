@@ -5,6 +5,7 @@ See also
 --------
 
 + [Definition Lists extension](definition-list)
++ [Abbreviations extension](abbreviation)
 
 Introduction
 ------------

@@ -5,6 +5,8 @@ See also
 --------
 
 + [Image Size extension](image-size)
++ [Pandoc flavor](Pandoc.flavor)
++ [Multi Markdown flavor](MultiMarkdown.flavor)
 
 Introduction
 ------------
@@ -21,6 +23,35 @@ Images
 ```````````````````````````````````````````````` example
 
 ![Foo](bar.jpeg "baz")
+
+![Foo](bar.jpeg (baz))
+
+.
+<figure>
+<figcaption>Foo</figcaption>
+<img src="bar.jpeg" alt="Foo" title="baz"/>
+</figure>
+<figure>
+<figcaption>baz</figcaption>
+<img src="bar.jpeg" alt="Foo"/>
+</figure>
+````````````````````````````````````````````````
+
+```````````````````````````````````````````````` example
+####### baz
+![Foo](bar.jpeg)
+
+.
+<figure>
+<figcaption>baz</figcaption>
+<img src="bar.jpeg" alt="Foo"/>
+</figure>
+````````````````````````````````````````````````
+
+```````````````````````````````````````````````` example
+
+![Foo](bar.jpeg)
+: baz
 
 .
 <figure>
