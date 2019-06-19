@@ -1,0 +1,53 @@
+Critic Markup
+===========
+
+See also
+--------
+
+- Source: http://criticmarkup.com
+
+Introduction
+------------
+
+Critic Markup is an orthogonal specification to markdown, which means it can be used with other languages as well.
+
+Standard Syntax
+---------------
+
+```````````````````````````````````````````````` example
+- `{-- removed content --}`
+- `{~~removed content~>inserted content~~}`
+- `{++ inserted content ++}`
+- `{== highlighted ==}`
+.
+<ul>
+<li><del> removed content </del></li>
+<li><del>removed content</del><ins>inserted content</ins></li>
+<li><ins> inserted content </ins></li>
+<li><mark> highlighted </mark></li>
+</ul>
+````````````````````````````````````````````````
+
+Truncated Syntax
+----------------
+
+```````````````````````````````````````````````` example
+- `--removed content--`
+- `~~removed content~>inserted content~~`
+- `++inserted content++`
+- `==highlighted==`
+- `>>comment<<`
+.
+<ul>
+<li><del>removed content</del></li>
+<li><del>removed content</del><ins>inserted content</ins></li>
+<li><ins>inserted content</ins></li>
+<li><mark>highlighted</mark></li>
+<li><span class="critic comment">comment</span></li>
+</ul>
+````````````````````````````````````````````````
+
+**Issue:** Make proper superset of [marked text](marked-text) and [strikethrough](strikethrough).
+
+**Issue:** Ensure [Smartypants](smartypants) compatibility for `--` being interpreted as an en or em dash.
+

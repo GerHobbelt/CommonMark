@@ -1,0 +1,55 @@
+Change Logs
+===========
+
+See also
+--------
+
+- [Keep a Changelog!](http://github.com/olivierlacan/keep-a-changelog)
+
+Introduction
+------------
+
+Release Heading
+-------
+
++ `/#{0,3} ?([\w\d\.-]+\.[\w\d\.-]+[A-z0-9])(?: \W (\w+ \d{1,2}(?:st|nd|rd|th)?,\s\d{4}|\d{4}-\d{2}-\d{2}|\w+))?\n?[=-]*/`
+
+[semantic versions](http://semver.org)
+
+Codename
+
+```````````````````````````````````````````````` example
+## major.minor.patch - CCYY-MM-DD [tag]
+## major.minor.patch / CCYY-MM-DD [tag]
+## major.minor.patch (CCYY-MM-DD) [tag]
+## [major.minor.patch]
+.
+````````````````````````````````````````````````
+
+Subheading
+----------
+
+_Added_, _Changed_, _Deprecated_, _Removed_, _Fixed_, _Security_
+
+Tags
+----
+
+- `[UPPERCASE]`
+
+_Security_, _Bugfix_, _Feature_, _Enhancement_, _Performance_
+
+Changes List
+------------
+
+```example
++ newly added feature or changed behavior
+* bug or security fix and mere description
+- deprecated or removed feature
+.
+<ul>
+<li>new feature or changed behavior</li>
+<li>bug fix or mere description</li>
+<li>deprecated or removed feature</li>
+</ul>
+```
+

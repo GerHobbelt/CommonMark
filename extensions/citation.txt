@@ -1,0 +1,93 @@
+Citation
+========
+
+See also
+--------
+
++ [Text Spans extension](span) – `["foo"]` for `<q>foo</q>` and `[foo](:)` for `<cite>foo</cite>`
+
+Introduction
+------------
+
+
+### Markdig
+
+```````````````````````````````````````` example
+""quotation""
+"""citation"""
+.
+<q>quotation</q>
+<cite>citation</cite>
+````````````````````````````````````````
+
+### Multimarkdown, DFM
+
+```````````````````````````````````````` example
+foo [#id] bar [#ext]
+
+[#id]: citation
+.
+<p>foo <a class="citation" href="#fn:1">[1]<span class="citekey" style="display:none">id</span></a> bar <span class="externalcitation">[#ext]</span></p>
+<div class="footnotes">
+  <hr>
+  <ol>
+    <li id="fn:1" class="citation">
+      <span class="citekey" style="display:none">id</span>
+      <p>citation</p>
+    </li>
+  </ol>
+</div>
+````````````````````````````````````````
+
+<!--
+need to check where this is used and how
+```````````````````````````````````````` example
+foo (#id) bar
+.
+````````````````````````````````````````
+-->
+
+### Pandoc, DFM, Markdig
+
+```````````````````````````````````````` example
+foo [@id]
+
+[id]: quuz
+[@id]: lorem
+.
+<p>
+  foo <span class="citation">[@id]</span>
+</p>
+<p>
+  <span class="citation">[@id]</span>: lorem
+</p>
+
+<p>
+  foo <a href="lorem">@id</a>
+</p>
+
+<p>
+  foo <a href="lorem"><xref href="id"/></a>
+</p>
+````````````````````````````````````````
+
+```````````````````````````````````````` example
+bar [pages etc.][@id]
+baz @id [pages etc.]
+
+[id]: quuz
+[@id]: lorem
+.
+<p>
+  bar [pages etc.]<span class="citation">[@id]</span>
+  baz <span class="citation">@id [pages etc.]</span>
+</p>
+<p>
+  <span class="citation">[@id]</span>: lorem
+</p>
+
+<p>
+  bar <a href="lorem">pages etc.</a>
+  baz <xref href="id"/> [pages etc.]
+</p>
+````````````````````````````````````````

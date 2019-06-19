@@ -1,0 +1,38 @@
+Extended Pipe Tables
+====================
+
+Horizontal Alignment in Columns
+-------------------------------
+
+```````````````````````````````````````````` example
+| default | left | center | right |
+| ------- |:---- |:------:| -----:|
+| 1       | 2    | 3      | 4     |
+.
+<table>
+<thead>
+<tr><th>default</th><th>left</th><th>center</th><th>right</th></tr>
+</thead>
+<tbody>
+<tr><td>1</td><td align="left">2</td><td align="center">3</td><td align="right">4</td></tr>
+</tbody>
+</table>
+````````````````````````````````````````````
+
+Column Span
+-----------
+
+```````````````````````````````````````````` example
+| A | B |
+|---|---|
+| AB   ||
+.
+<table>
+<thead>
+<tr><th>A</th><th>B</th></tr>
+</thead>
+<tbody>
+<tr><td colspan="2">AB</td></tr>
+</tbody>
+</table>
+````````````````````````````````````````````

@@ -1,0 +1,51 @@
+Full-Featured Pipe Tables
+=========================
+
+See also
+--------
+
+Requires full support of
+
+- [Extended Pipe Tables extension](extended-pipe-tables)
+- [Basic Pipe Tables extension](basic-pipe-tables)
+
+Introduction
+------------
+
+
+
+Multiple Rows in Table Head
+---------------------------
+
+
+Multiple Table Bodies
+---------------------
+
+
+Table Foot
+----------
+
+
+Row Span
+--------
+
+
+Block Content
+-------------
+
+
+Caption
+-------
+
+also see [Floats extension](floats)
+
+Alternative Characters
+----------------------
+
+- `#====#====#`
+- `+----+----+`
+
+Line Block
+----------
+
+special handling for single-column table

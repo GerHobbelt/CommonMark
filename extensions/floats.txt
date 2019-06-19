@@ -1,0 +1,24 @@
+Floats
+======
+
+Caption
+-------
+
+Table
+-----
+
+Figure
+------
+
+A paragraph consisting of a single image and nothing else.
+
+Gallery
+-------
+
+1. A paragraph consisting of multiple images and nothing else.
+2. A paragraph consisting of multiple links, each of which contains a single image, and nothing else.
+
+Link Card
+---------
+
+A paragraph consisting of a link and nothing else.

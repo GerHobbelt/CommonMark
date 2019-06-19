@@ -1,0 +1,30 @@
+Abbreviations
+===========
+
+See also
+--------
+
++ [Definition Lists extension](definition-list)
++ [Glossaries extension](glossary)
+
+Introduction
+------------
+
+### PHP Markdown Extra
+
+```````````````````````````````````````````````` example
+ACRO
+
+  *[ACRO]: expansion
+.
+<p><abbr title="expansion">ACRO</abbr></p>
+````````````````````````````````````````````````
+
+### RDiscount
+
+```example
+[abbr.](abbr:expansion)
+.
+<p><abbr title="expansion">abbr.</abbr>
+```
+

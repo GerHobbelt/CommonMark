@@ -1,0 +1,58 @@
+Superscript Text and Indices
+===========
+
+See also
+--------
+
+- [Subscript Text extension](subscript)
+- [Footnotes extension](footnote)
+
+Introduction
+---------------
+
+Standard syntax
+---------------
+
+Superscript text is enclosed in a pair of circumflex characters `^`.
+
+```````````````````````````````````````````````` example
+foo^bar^
+M^r^ M^rs^
+m^2^ s^-1^
+^14^C
+.
+foo<sup>bar</sup>
+M<sup>r</sup> M<sup>rs</sup>
+m<sup>2</sup> s<sup>-1</sup>
+<sup>14</sup>C
+````````````````````````````````````````````````
+
+Truncated syntax
+----------------
+
+A single-letter or purely numeric string can omit the trailing circumflex suffix `^`. A single letter index must be followed by a non-letter, i.e. a word boundary or a digit.
+
+```example
+foo^bar
+M^r M^rs
+m^2 s^-1
+^14C
+.
+foo^bar
+M<sup>r</sup> M^rs
+m<sup>2</sup> s^-1
+<sup>14</sup>C
+```
+
+However, standard syntax takes precedence in otherwise ambiguous situations that do not cross word boundaries.
+
+```example
+^2^H
+kg·m^2·s^2
+kg.m^2.s^2
+.
+<sup>2</sup>H
+kg·m<sup>2·s</sup>2
+kg.m<sup>2</sup>.s<sup>2</sup>
+```
+

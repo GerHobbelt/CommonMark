@@ -1,0 +1,28 @@
+Diagrams
+===========
+
+See also
+--------
+
++ [Infostring extension](infostring)
+
+Introduction
+------------
+
+
+
+Mermaid
+-------
+
+DOT, GraphViz
+-------------
+
+Other
+-----
+
+```````````````````````````````````````````````` example
+~~~ dot
+~~~
+.
+HTML
+````````````````````````````````````````````````

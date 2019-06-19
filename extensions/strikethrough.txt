@@ -1,0 +1,65 @@
+Strike-Through Text
+=============
+
+See also
+--------
+
+- [GitHub flavor](GitHub.flavor) – produces `<del>`
+- [GitLab flavor](GitLab.flavor) – ?
+- [Deleted Content extension](deletion) – virtually identical, `<del>` vs. `<s>`
+- [Subscript Text extension](subscript) – also uses tilde `~`
+- [Critic Markup extension](critic-markup)
+
+Introduction
+------------
+
+Strikethroughs, i.e. deletions, are marked up with two tilde characters `~~` on both sides.
+
+Possibly single marker for for subscript and double marker for strikethrough.
+
+```````````````````````````````````````````````` example
+A proper ~~strikethrough~~.
+.
+<p>A proper <s>strikethrough</s>.</p>
+````````````````````````````````````````````````
+
+Strikethrough can contain line breaks.
+
+```````````````````````````````````````````````` example
+This is ~~a
+strikethrough~~.
+.
+<p>This is <s>a
+strikethrough</s>.</p>
+````````````````````````````````````````````````
+
+But not empty lines:
+
+```````````````````````````````````````````````` example
+These are ~~not strikethroughs.
+
+No, they are not~~
+.
+<p>These are ~~not strikethroughs.</p>
+<p>No, they are not~~</p>
+````````````````````````````````````````````````
+
+Tildes must be next to a non-whitespace character. Other tildes can be part of the stricken text.
+
+```````````````````````````````````````````````` example
+This ~~ isn't ~~ legit.
+
+This ~~is ~~ legit~~.
+.
+<p>This ~~ isn't ~~ legit.</p>
+<p>This <s>is ~~ legit</s>.</p>
+````````````````````````````````````````````````
+
+**Issue:** In GFM, for legacy reasons, a single tilde is also supported and multiple tildes are collapsed.
+
+```````````````````````````````````````````````` example
+These are ~~~three~~~ ~odd~~~ ~~~strikethroughs~.
+.
+<p>These are <del>three</del> <del>odd</del>~~ ~~<del>strikethroughs</del>.</p>
+````````````````````````````````````````````````
+

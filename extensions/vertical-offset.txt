@@ -1,0 +1,14 @@
+Superscript and Subscript Text Module
+==============================
+
+This basic module simply combines the [subscript](subscript) and [superscript](superscript) extensions.
+
+Superscript Text
+----------------
+
+`^foo^`
+
+Subscript Text
+--------------
+
+`~foo~`
