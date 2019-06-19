@@ -1,3 +1,6 @@
+
+<div class="extension-chunk">
+
 ---
 title: Markua Spec
 author: '*This formal specification of Markua is written by Peter Armstrong and is based on the CommonMark Spec by John MacFarlane, and is licensed under the Creative Commons license CC-BY-SA 4.0.*'
@@ -918,6 +921,8 @@ Finally, I would like to thank my wife Caroline and my son Evan: while this is
 not as long as my other books, a lot of thought and effort went into it, and a
 lot of sacrifice. Thanks very much.
 
+</div>
+
 # Preliminaries
 
 ## Characters and lines
@@ -1160,6 +1165,9 @@ We can divide blocks into two types:
 [container blocks](@),
 which can contain other blocks, and [leaf blocks](@),
 which cannot.
+
+
+<div class="extension-chunk">
 
 # Metadata (Markua extension)
 
@@ -1898,6 +1906,8 @@ material book for the course.
 
 </div>
 
+</div>
+
 
 # Leaf blocks
 
@@ -2127,6 +2137,9 @@ If you want a thematic break in a list item, use a different bullet:
 </ul>
 ````````````````````````````````
 
+
+<div class="extension-chunk">
+
 ## Thematic break semantics (Markua extension)
 
 Thematic breaks, as shown above, produce an `<hr />` in HTML.
@@ -2145,6 +2158,9 @@ Since Markua bans all inline HTML except HTML comments, the only way to produce
 an `<hr />` is using the above thematic break syntax. So, designers can assume
 that all `<hr />` elements are thematic breaks, and style them in a way
 appropriate for a scene break in fiction.
+
+</div>
+
 
 ## ATX headings
 
@@ -2786,6 +2802,9 @@ bar
 baz</p>
 ````````````````````````````````
 
+
+<div class="extension-chunk">
+
 <div class="extension">
 
 ## Part headings (Markua extension)
@@ -3379,6 +3398,8 @@ recognized to the syntax highlighter, such as Pygments.
 * `text` - Unformatted code (with no syntax highlighting) - `.txt`
 * `guess` - Formatted code, with the language guessed at - any other file
   extension not listed previously in the sections above
+
+</div>
 
 </div>
 
@@ -4008,6 +4029,9 @@ Closing code fences cannot have [info strings]:
 ````````````````````````````````
 
 
+
+<div class="extension-chunk">
+
 <div class="extension">
 
 ## Code resources (Markua extension)
@@ -4573,6 +4597,8 @@ and **this** is not bold
 * * * cherry blossoms * * *
 </code></pre>
 ````````````````````````````````
+
+</div>
 
 </div>
 
@@ -5828,6 +5854,9 @@ bbb</p>
 ````````````````````````````````
 
 
+
+<div class="extension-chunk">
+
 <div class="extension">
 
 ## Paragraph continuations (Markua extension)
@@ -5967,6 +5996,8 @@ bar
 
 </div>
 
+</div>
+
 
 ## Blank lines
 
@@ -5989,6 +6020,9 @@ aaa
 <p>aaa</p>
 <h1>aaa</h1>
 ````````````````````````````````
+
+
+<div class="extension-chunk">
 
 <div class="extension">
 
@@ -6199,6 +6233,9 @@ If there are no rows in the body, no `<tbody>` is generated in HTML output:
 ````````````````````````````````
 
 </div>
+
+</div>
+
 
 # Container blocks
 
@@ -6645,6 +6682,9 @@ the `>`:
 </blockquote>
 ````````````````````````````````
 
+
+
+<div class="extension-chunk">
 
 <div class="extension">
 
@@ -7199,6 +7239,9 @@ attribute not being present.
 
 </div>
 
+</div>
+
+
 
 ## List items
 
@@ -7229,10 +7272,10 @@ The following rules define [list items]:
     Exceptions:
 
     1. When the first list item in a [list] interrupts
-    a paragraph---that is, when it starts on a line that would
-    otherwise count as [paragraph continuation text]---then (a)
-    the lines *Ls* must not begin with a blank line, and (b) if
-    the list item is ordered, the start number must be 1.
+       a paragraph---that is, when it starts on a line that would
+       otherwise count as [paragraph continuation text]---then (a)
+       the lines *Ls* must not begin with a blank line, and (b) if
+       the list item is ordered, the start number must be 1.
     2. If any line is a [thematic break][thematic breaks] then
        that line is not a list item.
 
@@ -8950,6 +8993,9 @@ Here the outer list is loose, the inner list tight:
 </li>
 </ul>
 ````````````````````````````````
+
+
+<div class="extension-chunk">
 
 <div class="extension">
 
@@ -10709,6 +10755,9 @@ for each other, would be much more difficult.
 
 </div>
 
+</div>
+
+
 
 # Inlines
 
@@ -10863,8 +10912,9 @@ foo
 </code></pre>
 ````````````````````````````````
 
-</div>
 
+
+<div class="extension-chunk">
 
 <div class="extension">
 
@@ -11032,6 +11082,9 @@ unless its documentation specifically states that it does. For example, Leanpub
 only supports inserting footnotes or endnotes in normal paragraph content.
 
 </div>
+
+</div>
+
 
 
 ## Entity and numeric character references
@@ -11235,6 +11288,9 @@ bar</p>
 ````````````````````````````````
 
 
+
+<div class="extension-chunk">
+
 <div class="extension">
 
 ## Entity and numeric character references (Markua extension)
@@ -11309,6 +11365,9 @@ Awesome](https://fontawesome.com/icons/leanpub?style=brands) would be output as
 `:fa-leanpub:`.
 
 </div>
+
+</div>
+
 
 
 ## Code spans
@@ -12888,7 +12947,10 @@ __a<http://foo.bar/?q=__>
 <p>__a<a href="http://foo.bar/?q=__">http://foo.bar/?q=__</a></p>
 ````````````````````````````````
 
-</div>
+
+<div class="extension-chunk">
+
+<div class="extension-chunk">
 
 ## Underline (Markua extension)
 
@@ -13048,6 +13110,8 @@ new paragraph~~.
 <p>This ~~has a</p>
 <p>new paragraph~~.</p>
 ````````````````````````````````
+
+</div>
 
 </div>
 
@@ -13550,9 +13614,13 @@ perform the *Unicode case fold*, strip leading and trailing
 matching reference link definitions, the one that comes first in the
 document is used.  (It is desirable in such cases to emit a warning.)
 
+<div class="extension-chunk">
+
 The contents of the first link label are parsed as inlines, which are
 used as the link's text.  The link's URI and title are provided by the
 matching [link reference definition].
+
+</div>
 
 Here is a simple example:
 
@@ -14094,6 +14162,9 @@ is followed by a link label (even though `[bar]` is not defined):
 ````````````````````````````````
 
 
+
+<div class="extension-chunk">
+
 <div class="extension">
 
 ## Crosslinks and ids (Markua extension)
@@ -14331,6 +14402,9 @@ include either the `#d` or `#n` parts: it will be "Anatomy of a Squirrel" not
 
 </div>
 
+</div>
+
+
 
 ## Images
 
@@ -14558,6 +14632,9 @@ If you want a link after a literal `!`, backslash-escape the
 <p>!<a href="/url" title="title">foo</a></p>
 ````````````````````````````````
 
+
+
+<div class="extension-chunk">
 
 <div class="extension">
 
@@ -15454,6 +15531,9 @@ abs(sum_(i=1)^n a_i b_i) <= (sum_(i=1)^n a_i^2)^(1/2) (sum_(i=1)^n b_i^2)^(1/2)
 
 </div>
 
+</div>
+
+
 ## Autolinks
 
 [Autolink](@)s are absolute URIs and email addresses inside
@@ -15640,6 +15720,9 @@ foo@bar.example.com
 <p>foo@bar.example.com</p>
 ````````````````````````````````
 
+
+<div class="extension-chunk">
+
 <div class="extension">
 
 ## Autolinks (GFM extension, identical)
@@ -15809,6 +15892,9 @@ a.b-c_d@a.b_
 ````````````````````````````````
 
 </div>
+
+</div>
+
 
 ## Raw HTML
 
@@ -16084,6 +16170,9 @@ foo <a href="\*">
 ````````````````````````````````
 
 
+
+<div class="extension-chunk">
+
 <div class="extension">
 
 ## Disallowed Raw HTML (GFM extension, extended)
@@ -16227,6 +16316,9 @@ stuff
 ````````````````````````````````
 
 </div>
+
+</div>
+
 
 
 ## Hard line breaks
@@ -16414,8 +16506,10 @@ line break or as a space.
 A renderer may also provide an option to render soft line breaks
 as hard line breaks.
 
-</div>
 
+
+
+<div class="extension-chunk">
 
 <div class="extension">
 
@@ -17040,6 +17134,10 @@ Yada yada yada.
 
 </div>
 
+</div>
+
+
+
 ## Textual content
 
 Any characters not given an interpretation by the above rules will
@@ -17407,3 +17505,4 @@ closers:
 
 After we're done, we remove all delimiters above `stack_bottom` from the
 delimiter stack.
+
