@@ -3,7 +3,7 @@
   "version": "0.30.0-2",
   "description": "CommonMark spec and test cases - forked and extended",
   "homepage": "http://commonmark.org",
-  "license": "MIT",
+  "license": "CC-BY-SA-4.0",
   "keywords": [
     "commonmark",
     "markdown"
