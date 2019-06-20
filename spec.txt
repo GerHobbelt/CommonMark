@@ -328,9 +328,9 @@ that is not a [whitespace character].
 
 An [ASCII punctuation character](@)
 is `!`, `"`, `#`, `$`, `%`, `&`, `'`, `(`, `)`,
-`*`, `+`, `,`, `-`, `.`, `/` (U+0021–2F), 
+`*`, `+`, `,`, `-`, `.`, `/` (U+0021–2F),
 `:`, `;`, `<`, `=`, `>`, `?`, `@` (U+003A–0040),
-`[`, `\`, `]`, `^`, `_`, `` ` `` (U+005B–0060), 
+`[`, `\`, `]`, `^`, `_`, `` ` `` (U+005B–0060),
 `{`, `|`, `}`, or `~` (U+007B–007E).
 
 A [punctuation character](@) is an [ASCII
@@ -985,18 +985,18 @@ ATX headings can be empty:
 <h3></h3>
 ````````````````````````````````
 
-Note that MediaWiki markup uses the equals sign `=` for ATX-like headings instead 
-and uses the number sign `#` for ordered list items. 
+Note that MediaWiki markup uses the equals sign `=` for ATX-like headings instead
+and uses the number sign `#` for ordered list items.
 This constitutes one major incompatibility between CommonMark and MediaWiki.
 
 
 ### Heading identifiers
 
-Headings may be used to generate a table of contents (ToC). 
-Authors and readers commonly want to target links at headings. 
-Therefore, an implementation may choose to 
-add unique anchors to all headings 
-which are automatically generated from their textual content 
+Headings may be used to generate a table of contents (ToC).
+Authors and readers commonly want to target links at headings.
+Therefore, an implementation may choose to
+add unique anchors to all headings
+which are automatically generated from their textual content
 
 ```````````````````````````````` example
 # Foo
@@ -1008,7 +1008,7 @@ which are automatically generated from their textual content
 <h2 id="baz">Baz</h2>
 ````````````````````````````````
 
-If necessary to disambiguate, 
+If necessary to disambiguate,
 the textual content of their ancestral headings can also be used.
 
 ```````````````````````````````` example
@@ -1023,8 +1023,8 @@ the textual content of their ancestral headings can also be used.
 <h2 id="bar_(quuz)">Baz</h2>
 ````````````````````````````````
 
-If that does not result in unique identifiers, 
-a counter may be added. 
+If that does not result in unique identifiers,
+a counter may be added.
 
 ```````````````````````````````` example
 # Foo
@@ -1034,8 +1034,8 @@ a counter may be added.
 <h1 id="foo-2">Foo</h1>
 ````````````````````````````````
 
-The exact algorithm to generate the identifier is not mandated. 
-Implementations may choose to apply Unicode normalization, 
+The exact algorithm to generate the identifier is not mandated.
+Implementations may choose to apply Unicode normalization,
 case folding, white space collapsing, affix addition,
 romanization, removal of diacritic marks etc.
 as needed to conform to the requirements of the target language.
@@ -1055,7 +1055,7 @@ interpretable as a [code fence], [ATX heading][ATX headings],
 
 A [setext heading underline](@) is a sequence of
 `=` characters or a sequence of `-` characters, with no more than 3
-spaces indentation and any number of trailing spaces.  If a line 
+spaces indentation and any number of trailing spaces.  If a line
 containing a single `-` can be interpreted as an
 empty [list item][list items], it *should* be interpreted this way
 and not as a [setext heading underline].
@@ -1393,9 +1393,9 @@ One can find four different interpretations:
 3. paragraph "Foo bar --- baz"
 4. heading "Foo bar", paragraph "baz"
 
-Interpretation 3 does not comply with the CommonMark rule 
-that both a [thematic break] and a setext heading 
-can interrupt a paragraph, 
+Interpretation 3 does not comply with the CommonMark rule
+that both a [thematic break] and a setext heading
+can interrupt a paragraph,
 i.e. they do not need a blank line before or after.
 
 We find interpretation 4 most natural, and interpretation 4
@@ -1708,8 +1708,8 @@ as inlines.  The first word of the [info string] is typically used to
 specify the language of the code sample, and rendered in the `class`
 attribute of the `code` tag.  However, this spec does not mandate any
 particular treatment of the [info string].
-That means, extensions may use the information, for instance, 
-to highlight the syntax with different colors 
+That means, extensions may use the information, for instance,
+to highlight the syntax with different colors
 or to parse and evaluate the code, e.g. to create a diagram.
 
 Here is a simple example with backticks:
