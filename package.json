@@ -1,6 +1,6 @@
 {
   "name": "@gerhobbelt/commonmark-spec",
-  "version": "0.30.0-2",
+  "version": "0.30.0-3",
   "description": "CommonMark spec and test cases - forked and extended",
   "homepage": "http://commonmark.org",
   "license": "CC-BY-SA-4.0",
